@@ -1,11 +1,8 @@
-# CSDMS'23 Sustainable Solvers
+# NUWEST'24 Sustainable Solvers
 
 This clinic will use:
 
 * [PETSc](https://petsc.org) for algebraic solver fundamentals
-
-And these optional packages for more real-world examples.
-
 * [libCEED](https://libceed.org) for fast element algebra and fluids simulation
 * [Ratel](https://ratel.micromorph.org) for solid mechanics
 
