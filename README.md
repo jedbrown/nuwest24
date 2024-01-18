@@ -2,23 +2,33 @@
 
 This clinic will use:
 
-* [PETSc](https://petsc.org) for algebraic solver fundamentals
-* [libCEED](https://libceed.org) for fast element algebra and fluids simulation
-* [Ratel](https://ratel.micromorph.org) for solid mechanics
+* [PETSc](https://petsc.org) [[repo]](https://gitlab.com/petsc/petsc) for algebraic solver fundamentals
+* [libCEED](https://libceed.org) [[repo]](https://github.com/CEED/libCEED) for fast element algebra and fluids simulation
+* [Ratel](https://ratel.micromorph.org) [[repo]](https://gitlab.com/micromorph/ratel) for solid mechanics
 
 ## Installation
 
+### Tioga (LLNL)
+
+``` console
+$ . /g/g19/brown313/activate.sh
+$ flux alloc -N 1 -t 1h --queue=pdebug
+$ flux run -n 2 navierstokes -options_file examples/fluids/gaussianwave.yaml -ceed /gpu/hip
+```
+
 ### Colab (cloud)
 
-https://colab.research.google.com/drive/1SkEWDWsxZ7MzbE9D8lgOa-pSdsqLqXOq?usp=sharing
+https://colab.research.google.com/drive/1eBOWQ-4W3FeJ4wuPNXVVZ7RHYjRELUZ3?usp=sharing
 
 ### Docker (recommended)
 
 This is the simplest approach once you have Docker installed.
 
 ```console
-$ docker run -it --rm -v $(pwd):/work registry.gitlab.com/micromorph/ratel
+$ docker run -it --rm -v $(pwd):/work jedbrown/nuwest
 ```
+
+This image is continually updated: `registry.gitlab.com/micromorph/ratel`
 
 ### Building from source
 
